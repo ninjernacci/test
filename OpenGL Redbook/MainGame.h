@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Sprite.h"
+#include "GLSLProgram.h"
 #include <SDL.h>
 #include <glew.h>
 #include <freeglut.h>
@@ -21,6 +23,7 @@ public:
 private:
 
 	void initSystems();
+	void initShaders();
 	void processInput();
 	void gameLoop();
 	void drawGame();
@@ -29,5 +32,9 @@ private:
 	int _screenWidth;
 	int _screenHeight;
 	GameState _gameState;
+
+	GLSLProgram _colorProgram;
+
+	Sprite _sprite;
 };
 

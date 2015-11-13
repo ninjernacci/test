@@ -1,14 +1,17 @@
-﻿Build started 10/23/2015 4:35:58 PM.
+﻿Build started 11/12/2015 7:08:56 PM.
      1>Project "C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\OpenGL Redbook\OpenGL Redbook.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\\OpenGL" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt MainGame.cpp
          MainGame.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\Debug\OpenGL Redbook.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\\lib" freeglut.lib glew32.lib glew32mx.lib glew32mxs.lib glew32s.lib lua52.lib SDL2_image.lib SDL2.lib SDL2main.lib SDL2test.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\Debug\OpenGL Redbook.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\Debug\OpenGL Redbook.lib" /MACHINE:X86 Debug\Main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\Debug\OpenGL Redbook.exe" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\\lib" freeglut.lib glew32.lib glew32mx.lib glew32mxs.lib glew32s.lib lua52.lib SDL2_image.lib SDL2.lib SDL2main.lib SDL2test.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\Debug\OpenGL Redbook.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\Debug\OpenGL Redbook.lib" /MACHINE:X86 Debug\Errors.obj
+         Debug\GLSLProgram.obj
+         Debug\Main.obj
          Debug\MainGame.obj
+         Debug\Sprite.obj
          OpenGL Redbook.vcxproj -> C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\Debug\OpenGL Redbook.exe
      1>Done Building Project "C:\Users\Casey\documents\visual studio 2015\Projects\OpenGL Redbook\OpenGL Redbook\OpenGL Redbook.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:03.16
+Time Elapsed 00:00:01.15

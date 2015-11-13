@@ -2,15 +2,8 @@
 #include <iostream>
 #include <conio.h>
 #include <string>
+#include "Errors.h"
 
-void fatalError(std::string errorString)
-{
-	std::cout << errorString << std::endl;
-	std::cout << "Enter any key to quit...";
-	_getch();
-	SDL_Quit();
-
-}
 
 MainGame::MainGame()
 {
@@ -45,8 +38,8 @@ void MainGame::initSystems()
 		fatalError("SDL_GL context could not be created");
 	}
 
-	GLenum error = glewInit();
 
+	GLenum error = glewInit();
 	if (error != GLEW_OK)
 	{
 		fatalError("Could not initialize GLEW");
@@ -54,11 +47,22 @@ void MainGame::initSystems()
 
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	glClearColor(.0f, .0f, 1.0f, 1.0f);
+
+	initShaders();
+}
+
+void MainGame::initShaders()
+{
+	_colorProgram.compileShaders("Shaders/colorShading.vert", "Shaders/colorShading.frag");
+	_colorProgram.addAttribute("vertexPosition");
+	_colorProgram.linkShaders();
 }
 
 void MainGame::run()
 {
 	initSystems();
+
+	_sprite.init(-1.0f, -1.0f, 1.0f, 1.0f);
 
 	gameLoop();
 }
@@ -69,12 +73,14 @@ void MainGame::gameLoop()
 	{
 		processInput();
 		drawGame();
+		
 	}
 }
 
 void MainGame::processInput()
 {
 	SDL_Event evnt;
+
 	while (SDL_PollEvent(&evnt) == 1)
 	{
 		switch (evnt.type)
@@ -85,8 +91,9 @@ void MainGame::processInput()
 			case SDL_MOUSEMOTION:
 				std::cout << evnt.motion.x << " " << evnt.motion.y << std::endl;
 				break;
-			
-		}	
+
+		}
+
 	}
 }
 
@@ -95,14 +102,12 @@ void MainGame::drawGame()
 	glClearDepth(1.0f);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	glEnableClientState(GL_COLOR_ARRAY);
-	glBegin(GL_TRIANGLES);
-	glColor3f(0.0f, 1.0f, 0.0f);
-	glVertex2f(0, 0);
-	glVertex2f(0, 500);
-	glVertex2f(500, 500);
-	glEnd();
+	_colorProgram.use();
+	
+
+	_sprite.draw();
+
+	_colorProgram.unuse();
 
 	SDL_GL_SwapWindow(_window);
 }
-
